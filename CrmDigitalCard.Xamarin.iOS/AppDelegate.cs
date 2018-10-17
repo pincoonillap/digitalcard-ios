@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace CrmDigitalCard.Xamarin.iOS
 {
@@ -23,6 +26,7 @@ namespace CrmDigitalCard.Xamarin.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            AppCenter.Start("61272600-b037-4200-9dab-3f9bc84a104a", typeof(Analytics), typeof(Crashes));
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
